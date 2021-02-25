@@ -25,6 +25,34 @@ function clearCart() {}
 function showCart() {
 
   // TODO: Find the table body
+  let tbody = table.children[1];
+  let item = cart.items;
+  console.log(item);
+  for(let i = 0; i < cart.items.length; i++) {
+    
+    let tr = document.createElement('tr');
+    let td = document.createElement('td');
+    td.setAttribute('id' , i )
+    td.textContent = 'X';
+    tr.appendChild(td);
+    td = document.createElement('td');
+    td.textContent = item[i].quantity;
+    tr.appendChild(td);
+    td = document.createElement('td');
+    td.textContent = item[i].product;
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+
+  }
+
+  
+
+  // let tr = document.getElementById('tr');
+  // table.appendChild(tr);
+  // let th = document.createElement('th');
+  // th.textContent = cart
+  // tr.appendChild(th);
+  console.log(tbody);
 
   // TODO: Iterate over the items in the cart
   // TODO: Create a TR
